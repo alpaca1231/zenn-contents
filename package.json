@@ -1,0 +1,14 @@
+{
+  "name": "zenn-contents",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/alpaca1231/zenn-contents.git",
+  "author": "kaz <kazuki.amatatsu.fd@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "npx zenn preview"
+  },
+  "dependencies": {
+    "zenn-cli": "^0.1.137"
+  }
+}
