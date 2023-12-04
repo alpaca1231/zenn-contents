@@ -98,26 +98,49 @@ bun add react-onesignal
 OneSignalはwindowオブジェクトを拡張して動作するようになっているため、クライアントコンポーネントにする必要があります。
 また下記のコード例ではOneSignalを初期化した後すぐにプッシュ通知のプロンプトを表示するように呼び出しています。
 
-```diff tsx:src/app/page.tsx
-+'use client'
- 
-+import { useEffect } from 'react'
- import Image from 'next/image'
-+import OneSignal from 'react-onesignal'
- 
- export default function Home() {
-+  useEffect(() => {
-+    const oneSignalInit = async () => {
-+      await OneSignal.init({
-+        appId: process.env.NEXT_PUBLIC_ONESIGNAL_APP_ID || '',
-+      }).then(() => {
-+        OneSignal.Slidedown.promptPush()
-+      })
-+    }
-+    oneSignalInit()
-+  }, [])
- 
-   return ( // 以下省略
+```tsx:src/lib/OneSignalInitial.tsx
+'use client'
+
+import { useEffect } from 'react'
+import OneSignal from 'react-onesignal'
+
+export const OneSignalInitial = () => {
+  useEffect(() => {
+    const oneSignalInit = async () => {
+      await OneSignal.init({
+        appId: process.env.NEXT_PUBLIC_ONESIGNAL_APP_ID || '',
+      }).then(() => {
+        OneSignal.Slidedown.promptPush()
+      })
+    }
+    oneSignalInit()
+  }, [])
+  return null
+}
+```
+
+```diff tsx:src/app/layout.tsx
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
++import { OneSignalInitial } from '@/lib/OneSignalInitial'
+
+// 省略
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en">
+      <body className={inter.className}>
++        <OneSignalInitial />
+        {children}
+      </body>
+    </html>
+  )
+}
 ```
 
 ここまで設定して開発環境で確認するとプッシュ通知の購読許可するプロンプトが表示されます。
@@ -180,7 +203,10 @@ https://www.simicart.com/manifest-generator.html/
 +        <link rel="apple-touch-icon" href="/icon-192x192.png"></link>
 +        <meta name="theme-color" content="#f69435" />
 +      </head>
-       <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <OneSignalInitial />
+        {children}
+      </body>
      </html>
    )
 ```
