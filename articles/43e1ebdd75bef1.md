@@ -7,7 +7,7 @@ published: false
 publication_name: "chot"
 ---
 
-ちょっと株式会社 Advent Calendar 2023 4日目の記事です。
+![ちょっと株式会社 Advent Calendar 2023 4日目の記事](/images/43e1ebdd75bef1/eye_catching.png)
 https://adventar.org/calendars/8910
 
 ## はじめに
@@ -120,27 +120,27 @@ export const OneSignalInitial = () => {
 ```
 
 ```diff tsx:src/app/layout.tsx
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
+ import type { Metadata } from 'next'
+ import { Inter } from 'next/font/google'
+ import './globals.css'
 +import { OneSignalInitial } from '@/lib/OneSignalInitial'
 
-// 省略
+ // 省略
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return (
-    <html lang="en">
-      <body className={inter.className}>
+ export default function RootLayout({
+   children,
+ }: {
+   children: React.ReactNode
+ }) {
+   return (
+     <html lang="en">
+       <body className={inter.className}>
 +        <OneSignalInitial />
-        {children}
-      </body>
-    </html>
-  )
-}
+         {children}
+       </body>
+     </html>
+   )
+ }
 ```
 
 ここまで設定して開発環境で確認するとプッシュ通知の購読許可するプロンプトが表示されます。
