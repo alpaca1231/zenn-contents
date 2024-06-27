@@ -2,7 +2,7 @@
 title: "【PWA】OneSignalを使ってiOSにWebプッシュ通知を送るRTA"
 emoji: "👻"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: [nextjs, pwa, webpush, onesignal, safari]
+topics: ["nextjs", "pwa", "safari", "onesignal", "webpush", ]
 published: false
 publication_name: "chot"
 ---

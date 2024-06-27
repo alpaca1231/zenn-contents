@@ -2,11 +2,7 @@
 title: "【React】GitHub ActionsでFirebase Hostingに自動デプロイしてみた"
 emoji: "🤙"
 type: "tech"
-topics:
-  - "firebase"
-  - "react"
-  - "githubactions"
-  - "deploy"
+topics: ["firebase", "React", "githubactions", "deploy"]
 published: true
 published_at: "2021-12-07 03:09"
 ---
