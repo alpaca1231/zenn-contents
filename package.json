@@ -6,7 +6,7 @@
   "author": "kaz <kazuki.amatatsu.fd@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "npx zenn preview"
+    "dev": "zenn preview"
   },
   "dependencies": {
     "zenn-cli": "^0.1.154"
