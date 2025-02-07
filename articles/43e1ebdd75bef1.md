@@ -4,7 +4,6 @@ emoji: "👻"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["nextjs", "pwa", "safari", "onesignal", "webpush", ]
 published: true
-publication_name: "chot"
 ---
 
 ![ちょっと株式会社 Advent Calendar 2023 4日目の記事](/images/43e1ebdd75bef1/eye_catching.png)
