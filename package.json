@@ -6,9 +6,11 @@
   "author": "kaz <kazuki.amatatsu.fd@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "zenn preview"
+    "preview": "zenn preview",
+    "new:article": "zenn new:article",
+    "new:book": "zenn new:book"
   },
   "dependencies": {
-    "zenn-cli": "^0.1.154"
+    "zenn-cli": "^0.4.5"
   }
 }
